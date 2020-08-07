@@ -6,68 +6,68 @@ export default class Logger
   {
     // { url, streamname, authentication, threshold }
     this.devMode = devMode
-    this.logger = new REST(config);
+    this.logger = new REST(config, devMode);
   }
 
   send(options = {})
   {
-    this.logger.send(options, this.devMode)
+    this.logger.send(options)
   }
 
   LogDebug(options = {})
   {
     let logger = this.logger
     options.level = logger.getDebugLevel()
-    logger.send(options, this.devMode)
+    logger.send(options)
   }
 
   LogInfo(options = {})
   {
     let logger = this.logger
     options.level = logger.getInfoLevel()
-    logger.send(options, this.devMode)
+    logger.send(options)
   }
 
   LogNotice(options = {})
   {
     let logger = this.logger
     options.level = logger.getNoticeLevel()
-    logger.send(options, this.devMode)
+    logger.send(options)
   }
 
   LogWarning(options = {})
   {
     let logger = this.logger
     options.level = logger.getWarningLevel()
-    logger.send(options, this.devMode)
+    logger.send(options)
   }
 
   LogError(options = {})
   {
     let logger = this.logger
     options.level = logger.getErrorLevel()
-    logger.send(options, this.devMode)
+    logger.send(options)
   }
 
   LogCritical(options = {})
   {
     let logger = this.logger
     options.level = logger.getCriticalLevel()
-    logger.send(options, this.devMode)
+    logger.send(options)
   }
 
   LogAlert(options = {})
   {
     let logger = this.logger
     options.level = logger.getAlertLevel()
-    logger.send(options, this.devMode)
+    logger.send(options)
   }
 
   LogEmergency(options = {})
   {
     let logger = this.logger
     options.level = gelf.getEmergencyLevel()
-    gelf.send(options, this.devMode)
+    gelf.send(options)
   }
 
   logException(e, otherAdditionals = {})
@@ -119,7 +119,7 @@ export default class Logger
             level: logger.getErrorLevel(),
             additionals: otherAdditionals
           }
-          logger.send(options, this.devMode)
+          logger.send(options)
         }
       });
     } else {
@@ -131,7 +131,7 @@ export default class Logger
         level: logger.getErrorLevel(),
         additionals: otherAdditionals
       }
-      logger.send(options, this.devMode)
+      logger.send(options)
     }
   }
 }
