@@ -6,7 +6,7 @@ export default class Logger
   {
     // { url, streamname, authentication, threshold }
     this.devMode = devMode
-    this.logger = new GELF(config);
+    this.logger = new REST(config);
   }
 
   send(options = {})
@@ -17,50 +17,50 @@ export default class Logger
   LogDebug(options = {})
   {
     let logger = this.logger
-    options.level = gelf.getDebugLevel()
-    gelf.send(options)
+    options.level = logger.getDebugLevel()
+    logger.send(options)
   }
 
   LogInfo(options = {})
   {
     let logger = this.logger
-    options.level = gelf.getInfoLevel()
-    gelf.send(options)
+    options.level = logger.getInfoLevel()
+    logger.send(options)
   }
 
   LogNotice(options = {})
   {
     let logger = this.logger
-    options.level = gelf.getNoticeLevel()
-    gelf.send(options)
+    options.level = logger.getNoticeLevel()
+    logger.send(options)
   }
 
   LogWarning(options = {})
   {
     let logger = this.logger
-    options.level = gelf.getWarningLevel()
-    gelf.send(options)
+    options.level = logger.getWarningLevel()
+    logger.send(options)
   }
 
   LogError(options = {})
   {
     let logger = this.logger
-    options.level = gelf.getErrorLevel()
-    gelf.send(options)
+    options.level = logger.getErrorLevel()
+    logger.send(options)
   }
 
   LogCritical(options = {})
   {
     let logger = this.logger
-    options.level = gelf.getCriticalLevel()
-    gelf.send(options)
+    options.level = logger.getCriticalLevel()
+    logger.send(options)
   }
 
   LogAlert(options = {})
   {
     let logger = this.logger
-    options.level = gelf.getAlertLevel()
-    gelf.send(options)
+    options.level = logger.getAlertLevel()
+    logger.send(options)
   }
 
   LogEmergency(options = {})
@@ -91,7 +91,7 @@ export default class Logger
       if (e.url) otherAdditionals.url = e.url
     }catch(e){}
 
-    if (this.devMode === true) console.log('logException', gelf, e, otherAdditionals)
+    if (this.devMode === true) console.log('logException', logger, e, otherAdditionals)
 
     if (typeof e.then === 'function') {
       // probably a promise
@@ -116,10 +116,10 @@ export default class Logger
             short_message: e_name + " - " + e_message,
             full_message: typeof e_stack !== 'undefined' ? e_stack : e_message,
             facility: e_name,
-            level: gelf.getErrorLevel(),
+            level: logger.getErrorLevel(),
             additionals: otherAdditionals
           }
-          gelf.send(options)
+          logger.send(options)
         }
       });
     } else {
@@ -128,10 +128,10 @@ export default class Logger
         short_message: e_name + " - " + e_message,
         full_message: typeof e_stack !== 'undefined' ? e_stack : e_message,
         facility: e_name,
-        level: gelf.getErrorLevel(),
+        level: logger.getErrorLevel(),
         additionals: otherAdditionals
       }
-      gelf.send(options)
+      logger.send(options)
     }
   }
 }
