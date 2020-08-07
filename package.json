@@ -4,7 +4,7 @@
   "description": "ReactJS SDK to interact with gCloud Monitoring services",
   "main": "src/index.js",
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/Schema31/react-gcloud-monitoring-sdk/issues"
   },
-  "homepage": "https://github.com/Schema31/react-gcloud-monitoring-sdk#readme"
+  "homepage": "https://github.com/Schema31/react-gcloud-monitoring-sdk#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
