@@ -18,8 +18,9 @@ export default class REST {
   * authentication la chiave di autenticazione, threshold la soglia minima di importanza per
   * scrivere o meno un  REST
   */
-  constructor(options)
+  constructor(options, devMode)
   {
+    this.devMode = devMode
     if(options.hasOwnProperty('streamname') && options.streamname.length != 0)
     {
       this.host = options.streamname
@@ -89,7 +90,7 @@ export default class REST {
   {
     if (!this.host || !this._AuthKey || !this.url)
     {
-      console.log('Unable to send REST stream')
+      console.log('Unable to send LOG stream')
       return
     }
 
@@ -162,6 +163,7 @@ export default class REST {
       headers: this.headers
     })
     .then(response => {
+      if (this.devMode) console.log('LOG successfully sent')
       //console.log(response)
     })
     .catch(error => {

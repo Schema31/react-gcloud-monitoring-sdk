@@ -11,63 +11,63 @@ export default class Logger
 
   send(options = {})
   {
-    this.logger.send(options)
+    this.logger.send(options, this.devMode)
   }
 
   LogDebug(options = {})
   {
     let logger = this.logger
     options.level = logger.getDebugLevel()
-    logger.send(options)
+    logger.send(options, this.devMode)
   }
 
   LogInfo(options = {})
   {
     let logger = this.logger
     options.level = logger.getInfoLevel()
-    logger.send(options)
+    logger.send(options, this.devMode)
   }
 
   LogNotice(options = {})
   {
     let logger = this.logger
     options.level = logger.getNoticeLevel()
-    logger.send(options)
+    logger.send(options, this.devMode)
   }
 
   LogWarning(options = {})
   {
     let logger = this.logger
     options.level = logger.getWarningLevel()
-    logger.send(options)
+    logger.send(options, this.devMode)
   }
 
   LogError(options = {})
   {
     let logger = this.logger
     options.level = logger.getErrorLevel()
-    logger.send(options)
+    logger.send(options, this.devMode)
   }
 
   LogCritical(options = {})
   {
     let logger = this.logger
     options.level = logger.getCriticalLevel()
-    logger.send(options)
+    logger.send(options, this.devMode)
   }
 
   LogAlert(options = {})
   {
     let logger = this.logger
     options.level = logger.getAlertLevel()
-    logger.send(options)
+    logger.send(options, this.devMode)
   }
 
   LogEmergency(options = {})
   {
     let logger = this.logger
     options.level = gelf.getEmergencyLevel()
-    gelf.send(options)
+    gelf.send(options, this.devMode)
   }
 
   logException(e, otherAdditionals = {})
@@ -119,7 +119,7 @@ export default class Logger
             level: logger.getErrorLevel(),
             additionals: otherAdditionals
           }
-          logger.send(options)
+          logger.send(options, this.devMode)
         }
       });
     } else {
@@ -131,7 +131,7 @@ export default class Logger
         level: logger.getErrorLevel(),
         additionals: otherAdditionals
       }
-      logger.send(options)
+      logger.send(options, this.devMode)
     }
   }
 }
