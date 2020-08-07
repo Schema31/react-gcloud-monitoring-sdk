@@ -11,11 +11,11 @@
     "url": "git+https://github.com/Schema31/react-gcloud-monitoring-sdk.git"
   },
   "keywords": [
-    "gelf",
     "react.js",
-    "gelf-log",
     "gcloud",
-    "monitoring"
+    "monitoring",
+    "logger",
+    "debug"
   ],
   "author": "Schema31 S.p.A.",
   "license": "MIT",
