@@ -2,7 +2,7 @@
 
 ```javascript
 import Logger from "@schema31/react-gcloud-monitoring-sdk";
-const devMode = true;
+
 const EMERGENCY = 0;
 const ALERT = 1;
 const CRITICAL = 2;
@@ -18,6 +18,7 @@ const LoggerConfig = { // Logger configurations
   threshold: NOTICE,
   url: "https://yourStreamUrl.com/"
 }
+const devMode = true;
 
 /**
   *
