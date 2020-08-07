@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Schema31/react-gcloud-monitoring-sdk.git"
+    "url": "git://github.com/Schema31/react-gcloud-monitoring-sdk.git"
   },
   "keywords": [
     "react.js",
