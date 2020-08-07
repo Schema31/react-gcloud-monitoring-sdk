@@ -1,9 +1,9 @@
 {
   "name": "@Schema31/react-gcloud-monitoring-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ReactJS SDK to interact with gCloud Monitoring services",
   "main": "src/index.js",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/Schema31" },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
