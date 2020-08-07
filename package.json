@@ -4,7 +4,7 @@
   "description": "ReactJS SDK to interact with gCloud Monitoring services",
   "main": "src/index.js",
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
+    "registry":"https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
