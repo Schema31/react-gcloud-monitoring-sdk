@@ -1,6 +1,6 @@
 {
   "name": "@schema31/react-gcloud-monitoring-sdk",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "ReactJS SDK to interact with gCloud Monitoring services",
   "main": "src/index.js",
   "publishConfig": {
