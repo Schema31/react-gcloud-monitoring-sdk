@@ -1,4 +1,4 @@
-import GELF from './GELF'
+import REST from './REST'
 
 export default class Logger
 {
@@ -6,73 +6,73 @@ export default class Logger
   {
     // { url, streamname, authentication, threshold }
     this.devMode = devMode
-    this.gelf = new GELF(config);
+    this.logger = new GELF(config);
   }
 
   send(options = {})
   {
-    this.gelf.send(options)
+    this.logger.send(options)
   }
 
   LogDebug(options = {})
   {
-    let gelf = this.gelf
+    let logger = this.logger
     options.level = gelf.getDebugLevel()
     gelf.send(options)
   }
 
   LogInfo(options = {})
   {
-    let gelf = this.gelf
+    let logger = this.logger
     options.level = gelf.getInfoLevel()
     gelf.send(options)
   }
 
   LogNotice(options = {})
   {
-    let gelf = this.gelf
+    let logger = this.logger
     options.level = gelf.getNoticeLevel()
     gelf.send(options)
   }
 
   LogWarning(options = {})
   {
-    let gelf = this.gelf
+    let logger = this.logger
     options.level = gelf.getWarningLevel()
     gelf.send(options)
   }
 
   LogError(options = {})
   {
-    let gelf = this.gelf
+    let logger = this.logger
     options.level = gelf.getErrorLevel()
     gelf.send(options)
   }
 
   LogCritical(options = {})
   {
-    let gelf = this.gelf
+    let logger = this.logger
     options.level = gelf.getCriticalLevel()
     gelf.send(options)
   }
 
   LogAlert(options = {})
   {
-    let gelf = this.gelf
+    let logger = this.logger
     options.level = gelf.getAlertLevel()
     gelf.send(options)
   }
 
   LogEmergency(options = {})
   {
-    let gelf = this.gelf
+    let logger = this.logger
     options.level = gelf.getEmergencyLevel()
     gelf.send(options)
   }
 
   logException(e, otherAdditionals = {})
   {
-    let gelf = this.gelf
+    let logger = this.logger
     try{
       e = JSON.parse(e)
     }

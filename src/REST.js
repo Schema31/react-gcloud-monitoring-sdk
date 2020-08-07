@@ -8,15 +8,15 @@ const INFO = 6;
 const DEBUG = 7;
 
 /**
-* Classe che serve per scriver un GELF Log (unico protocollo supportato è il REST)
+* Classe che serve per scriver un REST Log (unico protocollo supportato è il REST)
 */
-export default class GELF {
+export default class REST {
 
   /**
   *
   * @param {streamname, authentication, threshold} options streamname è il nome del flusso
   * authentication la chiave di autenticazione, threshold la soglia minima di importanza per
-  * scrivere o meno un  GELF
+  * scrivere o meno un  REST
   */
   constructor(options)
   {
@@ -89,7 +89,7 @@ export default class GELF {
   {
     if (!this.host || !this._AuthKey || !this.url)
     {
-      console.log('Unable to send GELF stream')
+      console.log('Unable to send REST stream')
       return
     }
 
