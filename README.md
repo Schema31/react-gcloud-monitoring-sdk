@@ -3,14 +3,38 @@
 ```javascript
 import Logger from "@schema31/react-gcloud-monitoring-sdk";
 const devMode = true;
-const LoggerConfig = {
-  graylogPort: 12201,
-  graylogHostname: '127.0.0.1',
-  connection: 'wan',
-  maxChunkSizeWan: 1420,
-  maxChunkSizeLan: 8154
+const EMERGENCY = 0;
+const ALERT = 1;
+const CRITICAL = 2;
+const ERROR = 3;
+const WARNING = 4;
+const NOTICE = 5;
+const INFO = 6;
+const DEBUG = 7;
+
+const LoggerConfig = { // Logger configurations
+  streamname: "development",
+  authentication: "456476567567",
+  threshold: NOTICE,
+  url: "https://yourStreamUrl.com/"
 }
 
-const logger = new Logger(LoggerConfig, devMode);
+/**
+  *
+  * @param {object} LoggerConfig - Basic configurations to setup the logging stream
+  * @param {bool} devMode - if true enables additional console logging
+  *
+  */
+const logger = new Logger(LoggerConfig, devMode); //set devMode TRUE for additional console logging
+
+try{
+   throw Error("Error")
+}catch(e){
+  const additionalInformations = {
+    "Type": "Exception",
+    "AppName": "Your application name"
+  }
+  logger.logException(e, additionalInformations)
+}
 
 ```
