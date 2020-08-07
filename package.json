@@ -16,7 +16,9 @@
     "gcloud",
     "monitoring",
     "logger",
-    "debug"
+    "debug",
+    "log",
+    "logging"
   ],
   "author": "Schema31 S.p.A.",
   "license": "MIT",
