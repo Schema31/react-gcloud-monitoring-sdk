@@ -39,7 +39,7 @@ try{
 }
 
 logger.LogInfo({ 
-  additionals,
+  ...additionals,
   level: 6 //default value for info logging
 })
 
