@@ -27,15 +27,20 @@ const devMode = true;
   *
   */
 const logger = new Logger(LoggerConfig, devMode); //set devMode TRUE for additional console logging
+const additionals = {
+    "Type": "Exception",
+    "AppName": "Your application name"
+}
 
 try{
    throw Error("Error")
 }catch(e){
-  const additionalInformations = {
-    "Type": "Exception",
-    "AppName": "Your application name"
-  }
-  logger.logException(e, additionalInformations)
+  logger.logException(e, additionals)
 }
+
+logger.LogInfo({ 
+  additionals,
+  level: 6 //default value for info logging
+})
 
 ```
