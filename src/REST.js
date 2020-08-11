@@ -6,6 +6,7 @@ const WARNING = 4;
 const NOTICE = 5;
 const INFO = 6;
 const DEBUG = 7;
+const URL = "https://adaptor.monitoring.gcloud.schema31.it/Adaptor/listener/REST"
 
 /**
 * Classe che serve per scriver un REST Log (unico protocollo supportato è il REST)
@@ -21,14 +22,18 @@ export default class REST {
   constructor(options, devMode)
   {
     this.devMode = devMode
+
     if(options.hasOwnProperty('streamname') && options.streamname.length != 0)
     {
       this.host = options.streamname
     }
+
     if(options.hasOwnProperty('url') && options.url.length != 0)
     {
       this.url = options.url
     }
+    else this.url = URL
+
     if(options.hasOwnProperty('authentication') && options.authentication.length != 0)
     {
       this._AuthKey = options.authentication
@@ -97,7 +102,6 @@ export default class REST {
     const body = {
       host: this.host,
       _AuthKey: this._AuthKey,
-      _timestamp: new Date(),
       _page: window.location.pathname,
       _href: window.location.href,
       _referrer: document.referrer,
@@ -151,6 +155,7 @@ export default class REST {
 
     if(this.threshold < body.level)
     {
+      console.error('Unable to send LOG stream', `threshold: ${this.threshold}`, `level: ${body.level}`)
       return
     }
 
@@ -163,7 +168,7 @@ export default class REST {
       headers: this.headers
     })
     .then(response => {
-      if (this.devMode) console.log('LOG successfully sent')
+      if (this.devMode) console.log('LOG successfully sent', response)
       //console.log(response)
     })
     .catch(error => {

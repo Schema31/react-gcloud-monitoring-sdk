@@ -91,7 +91,7 @@ export default class Logger
       if (e.url) otherAdditionals.url = e.url
     }catch(e){}
 
-    if (this.devMode === true) console.log('logException', logger, e, otherAdditionals)
+    if (this.devMode === true) console.log('logException', e, otherAdditionals)
 
     if (typeof e.then === 'function') {
       // probably a promise
@@ -99,7 +99,6 @@ export default class Logger
         if(results.ok !== 'undefined' && results.ok === false){
           if (this.devMode === true)
           {
-            console.log("E' una Promise ... la elaboro")
             console.log(results);
           }
           e_name = results.status
