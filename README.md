@@ -53,7 +53,7 @@ try{
 logger.LogInfo({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  ...
+  "additionals": {} // optional
 })
 ```
 
@@ -62,7 +62,7 @@ logger.LogInfo({
 logger.LogDebug({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  ...
+  "additionals": {} // optional
 })
 ```
 
@@ -71,7 +71,7 @@ logger.LogDebug({
 logger.LogNotice({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  ...
+  "additionals": {} // optional
 })
 ```
 
@@ -80,7 +80,7 @@ logger.LogNotice({
 logger.LogWarning({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  ...
+  "additionals": {} // optional
 })
 ```
 
@@ -89,7 +89,7 @@ logger.LogWarning({
 logger.LogError({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  ...
+  "additionals": {} // optional
 })
 ```
 
@@ -98,7 +98,7 @@ logger.LogError({
 logger.LogCritical({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  ...
+  "additionals": {} // optional
 })
 ```
 
@@ -107,7 +107,7 @@ logger.LogCritical({
 logger.LogAlert({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  ...
+  "additionals": {} // optional
 })
 ```
 
@@ -116,7 +116,7 @@ logger.LogAlert({
 logger.LogEmergency({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  ...
+  "additionals": {} // optional
 })
 ```
 
