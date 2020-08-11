@@ -93,7 +93,7 @@ export default class REST {
   {
     if (!this.host || !this._AuthKey || !this.url)
     {
-      console.log('Unable to send LOG stream')
+      console.error('Unable to send LOG stream')
       return
     }
 
@@ -108,11 +108,6 @@ export default class REST {
       _screen: "Screen dimensions: " +  window.screen.width + "x" + window.screen.height + " Screen available dimensions: " +  window.screen.availWidth + "x" + window.screen.availHeight + " Screen inner dimensions: " +  window.innerWidth + "x" + window.innerHeight
     };
 
-    if(options.hasOwnProperty('short_message') && this.is_string_full(options.short_message))
-    {
-      body.short_message = encodeURI(options.short_message)
-    }
-
     if(options.hasOwnProperty('full_message') && this.is_string_full(options.full_message))
     {
       body.full_message = encodeURI(options.full_message)
@@ -125,9 +120,42 @@ export default class REST {
 
     if(options.hasOwnProperty('level') && this.is_int(options.level))
     {
-      body.level = options.level
+      body.level = Number(options.level)
     }
     else body.level = DEBUG
+
+    if(options.hasOwnProperty('short_message') && this.is_string_full(options.short_message))
+    {
+      body.short_message = encodeURI(options.short_message)
+    }
+    else
+    {
+      switch(Number(body.level))
+      {
+        case EMERGENCY:
+        case ALERT:
+        case CRITICAL:
+        case ERROR:
+        body.short_message = 'error'
+        break;
+
+        case WARNING:
+        body.short_message = 'warning'
+        break;
+
+        case NOTICE:
+        body.short_message = 'notice'
+        break;
+
+        case INFO:
+        body.short_message = 'info'
+        break;
+
+        default:
+        body.short_message = 'debug'
+        break;
+      }
+    }
 
     if(options.hasOwnProperty('file') && this.is_string_full(options.file))
     {
@@ -166,8 +194,11 @@ export default class REST {
       headers: this.headers
     })
     .then(response => {
-      if (this.devMode) console.log('LOG successfully sent', response)
-      //console.log(response)
+      if (response.error || !response.ok)
+      {
+        throw (response)
+      }
+      if (this.devMode) console.log('LOG successfully sent')
     })
     .catch(error => {
       console.error('There was an error on LOG writing', error)

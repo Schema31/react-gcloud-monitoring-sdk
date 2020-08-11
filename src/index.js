@@ -66,8 +66,8 @@ export default class Logger
   LogEmergency(options = {})
   {
     let logger = this.logger
-    options.level = gelf.getEmergencyLevel()
-    gelf.send(options)
+    options.level = logger.getEmergencyLevel()
+    logger.send(options)
   }
 
   logException(e, otherAdditionals = {})
