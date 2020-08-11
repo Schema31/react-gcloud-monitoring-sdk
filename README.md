@@ -40,7 +40,8 @@ try{
 
 logger.LogInfo({ 
   ...additionals,
-  level: 6 //default value for info logging
+  level: 6, //default value for info logging
+  short_message: "message_name" //if short_message is not set, the default value corresponding to the current level will be used: "debug" for DEBUG, "info" for INFO, "notice" for NOTICE, "warning" for WARNING, "error" for level < 5
 })
 
 ```
