@@ -52,7 +52,7 @@ try{
 ```javascript
 logger.LogInfo({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
-  "long_message": "message_name", //optional
+  "full_message": "message_name", //optional
   ...
 })
 ```
@@ -61,7 +61,7 @@ logger.LogInfo({
 ```javascript
 logger.LogDebug({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
-  "long_message": "message_name", //optional
+  "full_message": "message_name", //optional
   ...
 })
 ```
@@ -70,7 +70,7 @@ logger.LogDebug({
 ```javascript
 logger.LogNotice({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
-  "long_message": "message_name", //optional
+  "full_message": "message_name", //optional
   ...
 })
 ```
@@ -79,7 +79,7 @@ logger.LogNotice({
 ```javascript
 logger.LogWarning({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
-  "long_message": "message_name", //optional
+  "full_message": "message_name", //optional
   ...
 })
 ```
@@ -88,7 +88,7 @@ logger.LogWarning({
 ```javascript
 logger.LogError({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
-  "long_message": "message_name", //optional
+  "full_message": "message_name", //optional
   ...
 })
 ```
@@ -97,7 +97,7 @@ logger.LogError({
 ```javascript
 logger.LogCritical({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
-  "long_message": "message_name", //optional
+  "full_message": "message_name", //optional
   ...
 })
 ```
@@ -106,7 +106,7 @@ logger.LogCritical({
 ```javascript
 logger.LogAlert({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
-  "long_message": "message_name", //optional
+  "full_message": "message_name", //optional
   ...
 })
 ```
@@ -115,7 +115,7 @@ logger.LogAlert({
 ```javascript
 logger.LogEmergency({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
-  "long_message": "message_name", //optional
+  "full_message": "message_name", //optional
   ...
 })
 ```
