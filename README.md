@@ -51,8 +51,8 @@ try{
 ### Info Logging
 ```javascript
 logger.LogInfo({ 
-  "AppName": "Your application name",
-  "short_message": "message_name",
+  "short_message": "message_name", //optional: if missing, a default value is provided
+  "long_message": "message_name", //optional
   ...
 })
 ```
@@ -60,8 +60,8 @@ logger.LogInfo({
 ### Debug Logging
 ```javascript
 logger.LogDebug({ 
-  "AppName": "Your application name",
-  "short_message": "message_name",
+  "short_message": "message_name", //optional: if missing, a default value is provided
+  "long_message": "message_name", //optional
   ...
 })
 ```
@@ -69,8 +69,8 @@ logger.LogDebug({
 ### Notice Logging
 ```javascript
 logger.LogNotice({ 
-  "AppName": "Your application name",
-  "short_message": "message_name",
+  "short_message": "message_name", //optional: if missing, a default value is provided
+  "long_message": "message_name", //optional
   ...
 })
 ```
@@ -78,9 +78,8 @@ logger.LogNotice({
 ### Warning Logging
 ```javascript
 logger.LogWarning({ 
-  "Type": "Exception",
-  "AppName": "Your application name",
-  "short_message": "message_name",
+  "short_message": "message_name", //optional: if missing, a default value is provided
+  "long_message": "message_name", //optional
   ...
 })
 ```
@@ -88,8 +87,8 @@ logger.LogWarning({
 ### Error Logging
 ```javascript
 logger.LogError({ 
-  "AppName": "Your application name",
-  "short_message": "message_name",
+  "short_message": "message_name", //optional: if missing, a default value is provided
+  "long_message": "message_name", //optional
   ...
 })
 ```
@@ -97,8 +96,8 @@ logger.LogError({
 ### Critical Logging
 ```javascript
 logger.LogCritical({ 
-  "AppName": "Your application name",
-  "short_message": "message_name",
+  "short_message": "message_name", //optional: if missing, a default value is provided
+  "long_message": "message_name", //optional
   ...
 })
 ```
@@ -106,8 +105,8 @@ logger.LogCritical({
 ### Alert Logging
 ```javascript
 logger.LogAlert({ 
-  "AppName": "Your application name",
-  "short_message": "message_name",
+  "short_message": "message_name", //optional: if missing, a default value is provided
+  "long_message": "message_name", //optional
   ...
 })
 ```
@@ -115,8 +114,8 @@ logger.LogAlert({
 ### Emergency Logging
 ```javascript
 logger.LogEmergency({ 
-  "AppName": "Your application name",
-  "short_message": "message_name",
+  "short_message": "message_name", //optional: if missing, a default value is provided
+  "long_message": "message_name", //optional
   ...
 })
 ```
