@@ -16,7 +16,7 @@ const LoggerConfig = { // Logger configurations
   streamname: "development",
   authentication: "456476567567",
   threshold: NOTICE,
-  url: "https://yourStreamUrl.com/"
+  url: "https://yourStreamUrl.com/" //if logger url is not set, the default value will be used instead
 }
 const devMode = true;
 
