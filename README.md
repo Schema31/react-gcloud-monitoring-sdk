@@ -52,7 +52,7 @@ try{
 ```javascript
 logger.LogInfo({ 
   "AppName": "Your application name",
-  short_message: "message_name",
+  "short_message": "message_name",
   ...
 })
 ```
@@ -61,7 +61,7 @@ logger.LogInfo({
 ```javascript
 logger.LogDebug({ 
   "AppName": "Your application name",
-  short_message: "message_name",
+  "short_message": "message_name",
   ...
 })
 ```
@@ -70,7 +70,7 @@ logger.LogDebug({
 ```javascript
 logger.LogNotice({ 
   "AppName": "Your application name",
-  short_message: "message_name",
+  "short_message": "message_name",
   ...
 })
 ```
@@ -80,7 +80,7 @@ logger.LogNotice({
 logger.LogWarning({ 
   "Type": "Exception",
   "AppName": "Your application name",
-  short_message: "message_name",
+  "short_message": "message_name",
   ...
 })
 ```
@@ -89,7 +89,7 @@ logger.LogWarning({
 ```javascript
 logger.LogError({ 
   "AppName": "Your application name",
-  short_message: "message_name",
+  "short_message": "message_name",
   ...
 })
 ```
@@ -98,7 +98,7 @@ logger.LogError({
 ```javascript
 logger.LogCritical({ 
   "AppName": "Your application name",
-  short_message: "message_name",
+  "short_message": "message_name",
   ...
 })
 ```
@@ -107,7 +107,7 @@ logger.LogCritical({
 ```javascript
 logger.LogAlert({ 
   "AppName": "Your application name",
-  short_message: "message_name",
+  "short_message": "message_name",
   ...
 })
 ```
@@ -116,7 +116,7 @@ logger.LogAlert({
 ```javascript
 logger.LogEmergency({ 
   "AppName": "Your application name",
-  short_message: "message_name",
+  "short_message": "message_name",
   ...
 })
 ```
