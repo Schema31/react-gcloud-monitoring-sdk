@@ -19,30 +19,28 @@ export default class REST {
   * authentication la chiave di autenticazione, threshold la soglia minima di importanza per
   * scrivere o meno un  REST
   */
-  constructor(options, devMode)
+  constructor(options = {}, devMode)
   {
     this.devMode = devMode
 
-    if(options.hasOwnProperty('streamname') && options.streamname.length != 0)
+    if (options)
     {
-      this.host = options.streamname
-    }
+      if(options.streamname && options.streamname.length != 0)
+      {
+        this.host = options.streamname
+      }
 
-    if(options.hasOwnProperty('url') && options.url.length != 0)
-    {
-      this.url = options.url
-    }
-    else this.url = URL
+      if(options.authentication && options.authentication.length != 0)
+      {
+        this._AuthKey = options.authentication
+      }
 
-    if(options.hasOwnProperty('authentication') && options.authentication.length != 0)
-    {
-      this._AuthKey = options.authentication
+      this.threshold = options.threshold ? parseInt(options.threshold) : DEBUG
+      this.url = options.url && options.url.length != 0 ? options.url : URL
     }
-
-    if(options.hasOwnProperty('threshold'))
+    else
     {
-      this.threshold = parseInt(options.threshold)
-    }else{
+      this.url = URL
       this.threshold = DEBUG
     }
 
@@ -141,7 +139,7 @@ export default class REST {
       body.line = options.line
     }
 
-    if(options.hasOwnProperty('additionals'))
+    if(options.additionals)
     {
       const self = this
       Object.keys(options.additionals).forEach(function(key) {
@@ -177,7 +175,7 @@ export default class REST {
   }
 
   is_string(input){
-    return (typeof input == 'string' || input instanceof String)
+    return input && (typeof input == 'string' || input instanceof String)
   }
 
   is_string_full(input){
