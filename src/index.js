@@ -116,7 +116,9 @@ export default class Logger
             full_message: typeof e_stack !== 'undefined' ? e_stack : e_message,
             facility: e_name,
             level: logger.getErrorLevel(),
-            additionals: otherAdditionals
+            additionals: otherAdditionals ? _objectWithoutProperties(otherAdditionals, ['then', 'catch']) : null,
+            then: otherAdditionals ? otherAdditionals.then : null,
+            catch: otherAdditionals ? otherAdditionals.catch : null
           }
           logger.send(options)
         }
@@ -128,9 +130,21 @@ export default class Logger
         full_message: typeof e_stack !== 'undefined' ? e_stack : e_message,
         facility: e_name,
         level: logger.getErrorLevel(),
-        additionals: otherAdditionals
+        additionals: otherAdditionals ? _objectWithoutProperties(otherAdditionals, ['then', 'catch']) : null,
+        then: otherAdditionals ? otherAdditionals.then : null,
+        catch: otherAdditionals ? otherAdditionals.catch : null
       }
       logger.send(options)
     }
   }
+}
+
+function _objectWithoutProperties(obj, keys) {
+  var target = {};
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+  return target;
 }
