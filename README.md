@@ -41,8 +41,8 @@ try{
    throw Error("Error")
 }catch(e){
   logger.logException(e, {
-      "Type": "Exception",
-      "AppName": "Your application name",
+    "then": response => {}, //function, optional: function called in case of success,
+    "catch": error => {}, //function, optional: callback catching errors form the logger
       ...
   })
 }
@@ -53,7 +53,9 @@ try{
 logger.LogInfo({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  "additionals": {} // optional
+  "additionals": {}, // optional
+  "then": response => {}, //function, optional: function called in case of success,
+  "catch": error => {} //function, optional: callback catching errors form the logger
 })
 ```
 
@@ -62,7 +64,9 @@ logger.LogInfo({
 logger.LogDebug({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  "additionals": {} // optional
+  "additionals": {}, // optional
+  "then": response => {}, //function, optional: function called in case of success,
+  "catch": error => {} //function, optional: callback catching errors form the logger
 })
 ```
 
@@ -71,7 +75,9 @@ logger.LogDebug({
 logger.LogNotice({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  "additionals": {} // optional
+  "additionals": {}, // optional
+  "then": response => {}, //function, optional: function called in case of success,
+  "catch": error => {} //function, optional: callback catching errors form the logger
 })
 ```
 
@@ -80,7 +86,9 @@ logger.LogNotice({
 logger.LogWarning({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  "additionals": {} // optional
+  "additionals": {}, // optional
+  "then": response => {}, //function, optional: function called in case of success,
+  "catch": error => {} //function, optional: callback catching errors form the logger
 })
 ```
 
@@ -89,7 +97,9 @@ logger.LogWarning({
 logger.LogError({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  "additionals": {} // optional
+  "additionals": {}, // optional
+  "then": response => {}, //function, optional: function called in case of success,
+  "catch": error => {} //function, optional: callback catching errors form the logger
 })
 ```
 
@@ -98,7 +108,9 @@ logger.LogError({
 logger.LogCritical({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  "additionals": {} // optional
+  "additionals": {}, // optional
+  "then": response => {}, //function, optional: function called in case of success,
+  "catch": error => {} //function, optional: callback catching errors form the logger
 })
 ```
 
@@ -107,7 +119,9 @@ logger.LogCritical({
 logger.LogAlert({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  "additionals": {} // optional
+  "additionals": {}, // optional
+  "then": response => {}, //function, optional: function called in case of success,
+  "catch": error => {} //function, optional: callback catching errors form the logger
 })
 ```
 
@@ -116,7 +130,9 @@ logger.LogAlert({
 logger.LogEmergency({ 
   "short_message": "message_name", //optional: if missing, a default value is provided
   "full_message": "message_name", //optional
-  "additionals": {} // optional
+  "additionals": {}, // optional
+  "then": response => {}, //function, optional: function called in case of success,
+  "catch": error => {} //function, optional: callback catching errors form the logger
 })
 ```
 
